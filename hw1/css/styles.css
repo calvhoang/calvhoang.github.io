@@ -107,3 +107,10 @@ footer img {
     height: 4rem;
     padding: 4px;
 }
+
+.medium {
+    width: auto;
+    height: 400px;
+    display: block; 
+    margin: 0 auto;
+}
