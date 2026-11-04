@@ -22,8 +22,17 @@ body {
     font-family: "Inter", Arial, Helvetica;
 }
 
+a {
+    color: #66B2FF;
+}
+
+a:visited {
+    color: #D6A3FF;
+}
+
 p {
     font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .layout {
@@ -118,3 +127,4 @@ footer img {
     justify-content: center;
     align-items: center;
 }
+
