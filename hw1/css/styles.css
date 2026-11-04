@@ -1,0 +1,109 @@
+:root {
+    --text-on-dark: #FFFFFF;
+    --text-on-light: #1A202C;
+    /* 
+    Colors retrieved/modified from: 
+    https://colorhunt.co/palette/20273436415ab7d894e0f8c7 
+    */
+    --sidebar: #202734;
+    --background: #2A3347;
+    --secondary: #B7D894;
+    --accent: #E0F8C7;
+    --active: rgb(50, 62, 82);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--background);
+    color: #0d0d0d;
+    font-family: "Inter", Arial, Helvetica;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--sidebar);
+    width: 250px;
+    flex-shrink: 0;
+    min-height: 100%;
+    align-self: stretch;
+    position: fixed;
+}
+
+.sidebar header {
+    padding: 1rem 1.5rem;
+    color: var(--text-on-dark);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-on-dark);
+}
+
+.sidebar a:hover {
+    font-weight: bold;
+    color: var(--text-on-light);
+    background-color: var(--secondary);
+}
+
+.active {
+    font-weight: bold;
+    color: var(--text-on-dark);
+    background-color: var(--background);
+}
+
+main {
+    color: var(--text-on-dark);
+    padding: 1rem 3rem;
+    flex-grow: 1;
+    margin-left: 250px;
+}
+
+article {
+    max-width: 65ch;
+    margin-inline: auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: var(--text-on-light);
+    font-size: 0.875rem;
+    line-height: 0.5;
+    padding: 1rem;
+    height: 10rem;
+    background-color: var(--secondary);
+    margin-top: auto;
+    z-index: 1;
+
+}
+
+footer img {
+    flex-shrink: 0;
+    width: auto;
+    height: 4rem;
+    padding: 4px;
+}
