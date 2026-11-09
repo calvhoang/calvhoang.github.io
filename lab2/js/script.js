@@ -41,7 +41,7 @@ function checkGuess() {
 
    if (guess < 1 || guess > 99) {
       feedback.textContent = "Enter a number between 1 and 99"
-      feedback.style.color = "red";
+      feedback.style.color = "#ff9595";
       return;
    }
 
