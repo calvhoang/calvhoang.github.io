@@ -50,7 +50,7 @@ function checkGuess() {
 
    if (guess == randomNumber) {
       feedback.textContent = "You guessed it! You won!"
-      feedback.style.color = "darkgreen";
+      feedback.style.color = "#96fd7e";
       win++;
       gameOver();
    } else {
@@ -58,15 +58,15 @@ function checkGuess() {
 
       if (attempts == 7) {
          feedback.textContent = "Sorry, you lost!"
-         feedback.style.color = "red";
+         feedback.style.color = "#ff9595";
          lose++;
          gameOver();
       } else if (guess > randomNumber) {
          feedback.textContent = "Guess was high"
-         feedback.style.color = "blue";
+         feedback.style.color = "#7aadff";
       } else {
          feedback.textContent = "Guess was low"
-         feedback.style.color = "blue";
+         feedback.style.color = "#7aadff";
       }
    }
 }

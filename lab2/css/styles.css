@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+
+    font-family: "Inter", Arial, Helvetica;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../img/pexels-black-ice-551383-1314546.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    justify-content: center;
+    justify-items: center;
+    flex: 1;
+}
+
+header {
+    color: #EEE;
+    text-shadow: #151515;
+    width: 100%;
+    padding: 1rem;
+}
+
+#game {
+    background-color: rgba(21, 21, 21, 0.8);
+    color: #EEE;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem;
+
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem;
+    margin: 1rem;
+}
+
+input {
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem;
+    margin-left: 1rem;
+}
+
+#stats {
+    background-color: rgba(21, 21, 21, 0.8);
+    color: #EEE;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #151515;
+    color: #DDD;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 0.5;
+    padding: 1rem;
+    height: 10rem;
+}
+
+footer img {
+    flex-shrink: 0;
+    width: auto;
+    height: 4rem;
+    padding: 4px;
+}

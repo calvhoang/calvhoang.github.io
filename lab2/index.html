@@ -5,6 +5,11 @@
     <title> Guess a Number</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -13,13 +18,15 @@
         <h2>Guess a number between 1 and 99 in seven attempts!</h2>
     </header>
     <br>
-    <div id="main">
-        Enter a guess:
-        <input type="text" id="playerGuess" size="5">
-        <button id="guessBtn"> Guess </button> <br>
-        <button id="resetBtn"> Reset </button>
-        <p id="feedback"></p>
-        <div>
+    <main>
+        <div id="game">
+            <span>Enter a guess:</span>
+            <input type="text" id="playerGuess" size="5">
+            <button id="guessBtn"> Guess </button> <br>
+            <button id="resetBtn"> Reset </button>
+            <p id="feedback"></p>
+        </div>
+        <div id="stats">
             Previous Guesses:
             <span id="guesses"></span>
             <br>
@@ -32,7 +39,7 @@
             Losses:
             <span id="losses">0</span>
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2026 Calvin Hoang. All rights reserved.</p>
