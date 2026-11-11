@@ -150,7 +150,7 @@ function gradeQuiz() {
         wrongAnswer(6);
     }
 
-        if (q7Response === "ak") {
+    if (q7Response === "ak") {
         rightAnswer(7);
     } else {
         wrongAnswer(7);
@@ -173,7 +173,7 @@ function gradeQuiz() {
     } else {
         wrongAnswer(10);
     }
- 
+
     let totalScore = document.querySelector("#totalScore");
 
     if (score >= 80) {
