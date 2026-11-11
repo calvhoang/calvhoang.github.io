@@ -1,5 +1,4 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
-displayQ4Choices();
 
 function isFormValid() {
     let isValid = true;
@@ -29,15 +28,15 @@ function setMarkImage(index, imageName, altText) {
 function rightAnswer(index) {
     let feedback = document.querySelector(`#q${index}Feedback`);
     feedback.textContent = "Correct!";
-    feedback.className = "bg-success text-white";
+    feedback.className = "bg-success text-white rounded-4 py-1 ps-2";
     setMarkImage(index, "checkmark.svg", "Checkmark");
-    score += 20;
+    score += 10;
 }
 
 function wrongAnswer(index) {
     let feedback = document.querySelector(`#q${index}Feedback`);
     feedback.textContent = "Incorrect!";
-    feedback.className = "bg-warning text-white";
+    feedback.className = "bg-warning text-white rounded-1 py-1 ps-2";
     setMarkImage(index, "xmark.svg", "X mark");
 }
 
@@ -50,29 +49,37 @@ function shuffleArray(array) {
     }
 }
 
-function displayQ4Choices() {
-    let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
-    shuffleArray(q4ChoicesArray);
+function displayChoices(q, choices) {
+    let choicesArray = choices;
+    shuffleArray(choicesArray);
 
-    let choicesContainer = document.querySelector("#q4Choices");
+    let choicesContainer = document.querySelector(`#${q}Choices`);
     choicesContainer.textContent = "";
 
-    for (let choice of q4ChoicesArray) {
+    for (let choice of choicesArray) {
         let input = document.createElement("input");
         input.type = "radio";
-        input.name = "q4";
+        input.name = `${q}`;
         input.id = choice;
         input.value = choice;
+        input.classList.add("form-check-input");
 
         let label = document.createElement("label");
         label.htmlFor = choice;
         label.textContent = choice;
+        label.classList.add("form-check-label");
 
         choicesContainer.appendChild(input);
         choicesContainer.appendChild(label);
         choicesContainer.appendChild(document.createTextNode(" "));
     }
 }
+
+let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
+let q8ChoicesArray = ["Hawaii", "Maine", "Washington", "Florida"]
+
+displayChoices("q4", q4ChoicesArray);
+displayChoices("q8", q8ChoicesArray)
 
 let attempts = localStorage.getItem("total_attempts");
 
@@ -93,6 +100,12 @@ function gradeQuiz() {
     score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
+    let selectedQ4 = document.querySelector("input[name=q4]:checked");
+    let q5Response = document.querySelector("#q5").value.toLowerCase();
+    let q7Response = document.querySelector("#q7").value;
+    let selectedQ8 = document.querySelector("input[name=q8]:checked")
+    let q9Response = document.querySelector("#q9").value;
+    let q10Response = document.querySelector("#q10").value.toLowerCase();
 
     if (q1Response === "sacramento") {
         rightAnswer(1);
@@ -115,14 +128,52 @@ function gradeQuiz() {
         wrongAnswer(3);
     }
 
-    let selectedQ4 = document.querySelector("input[name=q4]:checked");
-
     if (selectedQ4 !== null && selectedQ4.value === "Rhode Island") {
         rightAnswer(4);
     } else {
         wrongAnswer(4);
     }
 
+    if (q5Response === 'alaska') {
+        rightAnswer(5);
+    } else {
+        wrongAnswer(5);
+    }
+
+    if (document.querySelector("#Wyoming").checked &&
+        document.querySelector("#Idaho").checked &&
+        document.querySelector("#Montana").checked &&
+        !document.querySelector("#Nevada").checked &&
+        !document.querySelector("#Utah").checked) {
+        rightAnswer(6);
+    } else {
+        wrongAnswer(6);
+    }
+
+        if (q7Response === "ak") {
+        rightAnswer(7);
+    } else {
+        wrongAnswer(7);
+    }
+
+    if (selectedQ8 !== null && selectedQ8.value === "Maine") {
+        rightAnswer(8);
+    } else {
+        wrongAnswer(8);
+    }
+
+    if (q9Response === "0") {
+        rightAnswer(9);
+    } else {
+        wrongAnswer(9);
+    }
+
+    if (q10Response === "lake ontario" || q10Response === "ontario") {
+        rightAnswer(10);
+    } else {
+        wrongAnswer(10);
+    }
+ 
     let totalScore = document.querySelector("#totalScore");
 
     if (score >= 80) {
