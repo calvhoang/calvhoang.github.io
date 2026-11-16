@@ -174,7 +174,6 @@ async function loadCounties() {
     let response = await fetch(url);
     let data = await response.json();
 
-    // incomplete
     for (let item of data) {
       let option = document.createElement("option");
       option.value = item.county;
