@@ -10,18 +10,20 @@ const passwordLength = 8; // suggest password length
 async function displayCity() {
   try {
     let zipCode = document.querySelector("#zip").value;
-    let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
+    let url = `https://csumb.space/api/geo/cityInfoAPI.php?zip=${zipCode}`;
     let response = await fetch(url);
     let data = await response.json();
 
     if (data === false) {
       document.querySelector("#city").textContent = "Zip code not found";
-      document.querySelector("#latitude").textContent = "";
-      document.querySelector("#longitude").textContent = "";
+      document.querySelector("#latitude").textContent = "N/A";
+      document.querySelector("#longitude").textContent = "N/A";
       return;
     }
 
     document.querySelector("#city").textContent = data.city;
+    document.querySelector("#latitude").textContent = data.latitude;
+    document.querySelector("#longitude").textContent = data.longitude;
 
   } catch (error) {
     document.querySelector("#city").textContent = "Unable to retrieve city";
@@ -160,15 +162,23 @@ async function loadCounties() {
   let usps = stateMenu.value;
   let countyMenu = document.querySelector("#county");
 
+  countyMenu.textContent = "";
+
+  let defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Select One";
+  countyMenu.appendChild(defaultOption);
+
   try {
-    let url = `https://csumb.space/api/countyListAPI.php?state=${usps}`
+    let url = `https://csumb.space/api/geo/countyListAPI.php?state=${usps}`
     let response = await fetch(url);
     let data = await response.json();
 
+    // incomplete
     for (let item of data) {
       let option = document.createElement("option");
-      option.value = item;
-      option.textContent = item;
+      option.value = item.county;
+      option.textContent = item.county;
       countyMenu.appendChild(option);
     }
 
