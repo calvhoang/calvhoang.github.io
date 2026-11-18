@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: "Inter", Arial, Helvetica;
+}
+
+.card {
+    width: min(100%, 600px)
+}
+
+.card img {
+    margin-bottom: 1rem;
+}
+
+.instructions {
+    white-space: pre-line;
+}
+
+footer {
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 0.5;
+    padding: 1rem;
+    height: 10rem;
+}
+
+footer img {
+    width: auto;
+    height: 4rem;
+    padding: 4px;
+}
