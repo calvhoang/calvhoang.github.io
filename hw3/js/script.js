@@ -134,7 +134,7 @@ async function displayResults(data) {
                 <h5>Country of origin:</h5>
                 <p>${item.strCountry}</p>
                 <h5>Instructions:</h5>
-                <p class="instructions">${item.strInstructions || "None provided for this meal."}</p>
+                <p class="instructions">${item.strInstructions || "Search by name to view recipe."}</p>
             `;
 
             results.appendChild(card);
