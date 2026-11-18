@@ -145,4 +145,3 @@ async function displayResults(data) {
         `;
     }
 }
-
