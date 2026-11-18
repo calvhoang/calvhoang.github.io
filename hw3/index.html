@@ -14,8 +14,8 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <main>
+<body class="d-flex flex-column min-vh-100">
+    <main class="flex-fill container my-4">
         <div id="formCard" class="card shadow-sm m-4 p-4 mx-auto">
             <h3 class="fw-semibold">Meal Search</h3>
             <form id="mealSearchForm">
@@ -58,10 +58,12 @@
         </div>
     </main>
 
-    <footer class="text-center bg-dark text-light">
+    <footer class="text-center bg-dark text-light mt-auto">
         <p>&copy; 2026 Calvin Hoang. All rights reserved.</p>
         <p>This site is for academic purposes only.</p>
         <p>CST 336 Internet Programming.</p>
+        <p>API used: <a href="https://www.themealdb.com/docs_api_guide.php" target="_blank" class="link-info">TheMealDB
+                Docs</a></p>
         <img src="img/CSUMB_Logo.png" alt="Cal State Monterey Bay Logo" class="csumb-logo">
     </footer>
     <script src="js/script.js"></script>

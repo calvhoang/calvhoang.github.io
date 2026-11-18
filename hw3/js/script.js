@@ -128,11 +128,12 @@ async function displayResults(data) {
             card.className = "card m-2 p-3 mx-auto";
 
             card.innerHTML = `
-                <h5 class="fw-semibold">${item.strMeal}</h5>
+                <h4 class="fw-semibold">${item.strMeal}</h4>
                 <img src="${item.strMealThumb}" alt="Image of ${item.strMeal}" 
                 class="rounded">
-                <p>Country of origin: ${item.strCountry}</p>
-                <p>Instructions:</p>
+                <h5>Country of origin:</h5>
+                <p>${item.strCountry}</p>
+                <h5>Instructions:</h5>
                 <p class="instructions">${item.strInstructions || "None provided for this meal."}</p>
             `;
 
